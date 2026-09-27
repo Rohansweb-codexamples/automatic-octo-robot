@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio</b><small>CREATE • MIX • PERFORM</small></div></div>
+  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio <span class="version">V1</span></b><small>CREATE • MIX • PERFORM • REAL SOUND CONTROLS</small></div></div>
   <div class="top"><button id="play">Play</button><button id="stop">Stop</button><button id="clear">Clear</button><button id="save">Save</button><button id="export">Export</button><label class="upload">Import Audio<input id="audio" type="file" accept="audio/*"></label></div>
 </header>
 <main>
@@ -28,16 +28,17 @@
     <label>Synth <input class="mix" type="range" value="75"></label>
     <hr>
     <h3>Sound Library</h3>
-    <button class="sound" data-type="kick">Kick</button><button class="sound" data-type="snare">Snare</button><button class="sound" data-type="hat">Hi-Hat</button><button class="sound" data-type="clap">Clap</button>
+    <div class="sound-info">V1 drum set: Kick • Snare • Hi-Hat • Clap</div>
+    <div class="sound-buttons"><button class="sound" data-type="kick">Kick</button><button class="sound" data-type="snare">Snare</button><button class="sound" data-type="hat">Hi-Hat</button><button class="sound" data-type="clap">Clap</button></div>
     <p id="audioName">No imported audio</p>
   </aside>
 </section>
 <section class="panel piano">
-  <div class="title"><h2>Piano</h2><span>Use your computer keyboard or tap the keys</span></div>
+  <div class="title"><h2>Piano <span class="version">V1</span></h2><span>Correct note names and pitches • A S D F G H J K L</span></div>
   <div id="keys"></div>
 </section>
 <section class="panel pads">
-  <div class="title"><h2>Performance Pads</h2></div>
+  <div class="title"><h2>Performance Pads <span class="version">V1</span></h2><span>Each pad triggers its labelled sound</span></div>
   <div id="pads"></div>
 </section>
 </main>
