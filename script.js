@@ -78,8 +78,8 @@ document.getElementById("random").onclick=()=>{pattern.forEach(row=>row.forEach(
 document.getElementById("bpm").oninput=e=>document.getElementById("bpmVal").textContent=e.target.value;
 
 const notes=[
-["C4",261.63],["D4",293.66],["E4",329.63],["F4",349.23],["G4",392],["A4",440],["B4",493.88],
-["C5",523.25],["D5",587.33],["E5",659.25],["F5",698.46],["G5",783.99],["A5",880],["B5",987.77]
+["C4",261.6256],["D4",293.6648],["E4",329.6276],["F4",349.2282],["G4",391.9954],["A4",440],["B4",493.8833],
+["C5",523.2511],["D5",587.3295],["E5",659.2551],["F5",698.4565],["G5",783.9909],["A5",880],["B5",987.7666]
 ];
 const keys=document.getElementById("keys");
 notes.forEach(([n,f],i)=>{const k=document.createElement("button");k.className="key";k.textContent=n;
@@ -142,5 +142,5 @@ function vis(){
  cx.strokeStyle="#ffb000";cx.lineWidth=2*devicePixelRatio;cx.stroke();requestAnimationFrame(vis)
 }vis();
 
-const map={a:261.63,s:293.66,d:329.63,f:349.23,g:392,h:440,j:493.88,k:523.25,l:587.33};
+const map={a:261.6256,s:293.6648,d:329.6276,f:349.2282,g:391.9954,h:440,j:493.8833,k:523.2511,l:587.3295};
 document.onkeydown=e=>{if(map[e.key]&&!e.repeat){audio();synth(map[e.key],.42,"triangle",.16)}};
