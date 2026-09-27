@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rohans Music Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio</b><small>CREATE • MIX • PERFORM</small></div></div>
+  <div class="top"><button id="play">Play</button><button id="stop">Stop</button><button id="clear">Clear</button><button id="save">Save</button><button id="export">Export</button><label class="upload">Import Audio<input id="audio" type="file" accept="audio/*"></label></div>
+</header>
+<main>
+<section class="transport panel">
+  <div><strong id="state">Ready</strong><span>BPM</span><input id="bpm" type="range" min="60" max="180" value="120"><b id="bpmVal">120</b><button id="fullscreen">Fullscreen</button></div>
+  <canvas id="visualizer"></canvas>
+</section>
+<section class="workspace">
+  <div class="panel sequencer">
+    <div class="title"><h2>Beat Sequencer</h2><button id="random">Randomize</button></div>
+    <div id="grid"></div>
+  </div>
+  <aside class="panel mixer">
+    <h2>Mixer</h2>
+    <label>Master <input class="mix" type="range" value="80"></label>
+    <label>Drums <input class="mix" type="range" value="80"></label>
+    <label>Synth <input class="mix" type="range" value="75"></label>
+    <hr>
+    <h3>Sound Library</h3>
+    <button class="sound" data-type="kick">Kick</button><button class="sound" data-type="snare">Snare</button><button class="sound" data-type="hat">Hi-Hat</button><button class="sound" data-type="clap">Clap</button>
+    <p id="audioName">No imported audio</p>
+  </aside>
+</section>
+<section class="panel piano">
+  <div class="title"><h2>Piano</h2><span>Use your computer keyboard or tap the keys</span></div>
+  <div id="keys"></div>
+</section>
+<section class="panel pads">
+  <div class="title"><h2>Performance Pads</h2></div>
+  <div id="pads"></div>
+</section>
+</main>
+<footer>Rohans Web Music Studio • Your browser is your instrument</footer>
+<script src="script.js"></script>
+</body>
+</html>
