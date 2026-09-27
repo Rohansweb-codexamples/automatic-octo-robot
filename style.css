@@ -12,3 +12,5 @@
 .sample-card strong{font-size:14px}.sample-card span{font-size:12px;opacity:.62}
 @media(max-width:850px){.sample-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.sample-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}}
+
+.version{display:inline-block;margin-left:7px;padding:3px 8px;border-radius:7px;background:linear-gradient(135deg,#ffd000,#ff6a00);color:#241000;font-size:10px;letter-spacing:1px;vertical-align:middle;box-shadow:0 0 14px #ff9d0055}.sound-info{font-size:11px;opacity:.65;margin:-6px 0 9px}.sound-buttons{display:flex;flex-wrap:wrap;gap:4px}.sound-buttons .sound{margin:0}
