@@ -1,5 +1,5 @@
 const AC=window.AudioContext||window.webkitAudioContext;let ctx=null,master=null,playing=false,recording=false,timer=null,raf=null,playSec=0,step=0,selectedTrack="piano",importedBuffer=null,history=[],future=[],zoom=1;
-const APP_VERSION="V6.0";const KEY="rohansMusicStudioV6";const tracks=[["drums","Drums","Drum Kit"],["bass","Bass","808 Bass"],["piano","Piano","Grand Piano"],["melody","Melody","Synth Lead"]];const notes=["C3","D3","E3","F3","G3","A3","B3","C4","D4","E4","F4","G4","A4","B4","C5","D5"];
+const APP_VERSION="V7.1";const KEY="rohansMusicStudioV6";const tracks=[["drums","Drums","Drum Kit"],["bass","Bass","808 Bass"],["piano","Piano","Grand Piano"],["melody","Melody","Synth Lead"]];const notes=["C3","D3","E3","F3","G3","A3","B3","C4","D4","E4","F4","G4","A4","B4","C5","D5"];
 const packs={"Pop Essentials":{bpm:118,drums:[0,4,8,12],snare:[4,12],hat:[0,2,4,6,8,10,12,14],bass:[0,4,8,12],piano:[0,4,8,12],melody:[2,6,10,14]},"EDM Energy":{bpm:128,drums:[0,2,4,6,8,10,12,14],snare:[4,12],hat:[1,3,5,7,9,11,13,15],bass:[0,2,4,6,8,10,12,14],piano:[0,4,8,12],melody:[3,7,11,15]},"Lo-Fi Dreams":{bpm:86,drums:[0,7,8,14],snare:[4,12],hat:[2,6,10,14],bass:[0,6,8,14],piano:[0,5,9,13],melody:[2,8,12]},"Rock Room":{bpm:108,drums:[0,4,8,12],snare:[4,12],hat:[0,2,4,6,8,10,12,14],bass:[0,4,8,12],piano:[0,4,8,12],melody:[0,8]}};
 function fresh(){return{name:"My Music",bpm:120,lengthBars:32,clips:[],roll:{}}}let project=JSON.parse(localStorage.getItem(KEY)||"null")||fresh();function clone(){return JSON.parse(JSON.stringify(project))}function snap(){history.push(JSON.stringify(project));if(history.length>30)history.shift();future=[]}function save(){localStorage.setItem(KEY,JSON.stringify(project));snap();state("Saved")}
 function state(s){document.getElementById("state").textContent=s;document.getElementById("statusText").textContent=s}
@@ -83,11 +83,24 @@ function inferMidiInstrument(name){
 
 function soundType(path){const x=path.toLowerCase();if(/\b(kick|snare|hat|hihat|clap|tom|cymbal|perc|drum)\b/.test(x))return"drums";if(/bass|808/.test(x))return"bass";if(/piano|keys|keyboard/.test(x))return"piano";if(/guitar/.test(x))return"guitar";if(/string|violin|cello|orchestra/.test(x))return"strings";if(/organ/.test(x))return"organ";if(/bell|mallet|pluck/.test(x))return"bell";if(/pad/.test(x))return"pad";if(/synth|lead|arp/.test(x))return"lead";return"sample"}
 async function scanSoundLibrary(){try{state("Loading MP3 library...");const r=await fetch(SOUND_MANIFEST+"?v=7",{cache:"no-store"}),txt=await r.text(),paths=txt.split(/\r?\n/).map(x=>x.trim()).filter(x=>/\.mp3$/i.test(x));window.midiLibrary=paths.map(path=>({path,name:path.split("/").pop(),type:soundType(path),url:SOUND_ROOT+path.split("/").map(encodeURIComponent).join("/")}));soundLibrary=window.midiLibrary;soundScanDone=true;state("MP3 library: "+window.midiLibrary.length+" files");renderSoundLibrary()}catch(e){console.error(e);state("MP3 library unavailable")}}
-function renderSoundLibrary(){const box=document.getElementById("soundPacks");if(!box)return;const list=window.midiLibrary||[];box.innerHTML='<div class="pack"><b>MP3 SOUND LIBRARY V7.0</b><small>'+list.length+' converted MIDI songs</small></div>'+list.slice(0,100).map((s,i)=>'<button class="pack midi-pack" data-midi="'+i+'"><b>'+s.name.replace(/[&<>]/g,"")+'</b><small>'+s.type+'</small></button>').join("");box.querySelectorAll("[data-midi]").forEach(b=>b.onclick=()=>{const s=list[+b.dataset.midi];audio();const src=ctx.createBufferSource();fetch(s.url).then(r=>r.arrayBuffer()).then(a=>ctx.decodeAudioData(a)).then(b=>{src.buffer=b;src.connect(master);src.start();state("Playing MP3: "+s.name)})})}
-function midiNote(n){const names=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];return names[n%12]+(Math.floor(n/12)-1)}
-function midiInstrument(name){const x=name.toLowerCase();if(/bass|808/.test(x))return"bass";if(/piano|keys/.test(x))return"piano";if(/string|violin|cello/.test(x))return"strings";if(/guitar/.test(x))return"guitar";if(/organ/.test(x))return"organ";if(/pad/.test(x))return"pad";if(/pluck|arp|lead|synth/.test(x))return"lead";if(/bell|mallet/.test(x))return"bell";return"piano"}
-async function playMidiFile(item){try{audio();state("Loading "+item.name);const r=await fetch(item.url,{cache:"no-store"}),m=RohansMidiEngine.parse(await r.arrayBuffer()),beat=project.bpm>0?60/project.bpm:0.5,start=ctx.currentTime+.08,eng=midiInstrument(item.name);m.notes.forEach(n=>{const when=start+n.start*beat/m.ppq,dur=Math.max(.05,n.duration*beat/m.ppq);synth(midiNote(n.note),dur,.08+n.velocity*.12,eng,when)});state("Playing MIDI: "+item.name+" • "+m.notes.length+" notes")}catch(e){console.error(e);state("MIDI could not be played")}}
-function renderSoundLibrary(){const box=document.getElementById("soundPacks");if(!box)return;const list=window.midiLibrary||[];box.innerHTML='<div class="pack"><b>MIDI SAMPLE LIBRARY</b><small>'+list.length+' MIDI files • version V6.0</small></div>'+list.slice(0,50).map((s,i)=>'<button class="pack midi-pack" data-midi="'+i+'"><b>'+s.name+'</b><small>'+midiInstrument(s.name)+'</small></button>').join("");box.querySelectorAll("[data-midi]").forEach(b=>b.onclick=()=>playMidiFile(list[+b.dataset.midi]))}
+function renderSoundLibrary(){
+  const box=document.getElementById("soundPacks");
+  if(!box)return;
+  const list=window.midiLibrary||[];
+  box.innerHTML='<div class="pack"><b>MP3 SOUND LIBRARY V7.1</b><small>'+list.length+' converted MIDI files</small></div>'+
+    list.slice(0,100).map((s,i)=>'<button class="pack midi-pack" data-midi="'+i+'"><b>'+String(s.name).replace(/[&<>]/g,"")+'</b><small>'+s.type+'</small></button>').join("");
+  box.querySelectorAll("[data-midi]").forEach(b=>b.onclick=async()=>{
+    const s=list[+b.dataset.midi];
+    try{
+      audio(); state("Loading MP3: "+s.name);
+      const a=await fetch(s.url+"?v=71",{cache:"no-store"});
+      if(!a.ok)throw new Error("HTTP "+a.status);
+      const buf=await ctx.decodeAudioData(await a.arrayBuffer());
+      const src=ctx.createBufferSource(); src.buffer=buf; src.connect(master); src.start();
+      state("Playing MP3: "+s.name);
+    }catch(e){console.error(e);state("MP3 could not be loaded: "+s.name)}
+  });
+}
 function sampleCandidates(type){return soundLibrary.filter(s=>s.type===type&&/\\.(wav|mp3|ogg|m4a)$/i.test(s.path));}
 async function getSample(type){const a=sampleCandidates(type);if(!a.length)return null;const s=a[Math.floor(Math.random()*Math.min(a.length,100))];if(sampleBuffers.has(s.url))return sampleBuffers.get(s.url);try{const p=await fetch(s.url);const b=await p.arrayBuffer();const decoded=await audio().decodeAudioData(b);sampleBuffers.set(s.url,decoded);return decoded}catch{return null}}
 async function playRealSample(type,n="C4",d=.6,v=.18,when=0,dest=null){const b=await getSample(type);if(!b){gmPlay(type,n,d,v,when);return}audio();dest=dest||master;const t=ctx.currentTime+when,s=ctx.createBufferSource(),g=ctx.createGain();s.buffer=b;const base=b.duration>0?Math.max(.05,Math.min(1,b.duration)):1;s.playbackRate.value=Math.pow(2,(freq(n)/261.63-1)*.15);g.gain.value=v;s.connect(g).connect(dest);s.start(t);s.stop(t+Math.min(d+1,base/s.playbackRate.value));}
@@ -96,7 +109,18 @@ function noise(d,v,when=0,dest=null){audio();dest=dest||master;const b=ctx.creat
 function drum(k,when=0){if(k==="kick"){audio();const t=ctx.currentTime+when,o=ctx.createOscillator(),g=ctx.createGain();o.frequency.setValueAtTime(145,t);o.frequency.exponentialRampToValueAtTime(45,t+.18);g.gain.setValueAtTime(.8,t);g.gain.exponentialRampToValueAtTime(.0001,t+.3);o.connect(g).connect(master);o.start(t);o.stop(t+.32)}else noise(k==="hat"?.05:.14,k==="hat"?.12:.27,when)}
 function engine(i){return({"Grand Piano":"piano","Electric Piano":"electric","808 Bass":"bass","Drum Kit":"drums","Synth Lead":"lead","Synth Pad":"pad","Strings":"strings","Guitar":"guitar","Organ":"organ","Bell":"bell"})[i]||"piano"}
 function clipAt(sec){return project.clips.filter(c=>sec>=c.start&&sec<c.start+c.length)}
-function playClip(c,local){const s=local*4;const p=c.pattern;if(c.track==="drums"&&p.drums.includes(s%16))drum("kick");if(c.track==="drums"&&p.snare.includes(s%16))drum("snare");if(c.track==="drums"&&p.hat.includes(s%16))drum("hat");if(c.track==="bass"&&p.bass.includes(s%16))playRealSample("bass",["C2","G1","A1","F1"][Math.floor((s%16)/4)],.35,.16);if(c.track==="piano"&&p.piano.includes(s%16))playRealSample("piano",["C4","E4","G4","B4"][Math.floor((s%16)/4)],.5,.16);if(c.track==="melody"&&p.melody.includes(s%16))playRealSample("lead",["E5","G5","A5","B5","D6"][Math.floor((s%16)/2)%5],.32,.11);
+function playClip(c,local){
+  const s=Math.floor(local*4)%16;
+  const p=c.pattern||defaultPattern();
+  if(c.track==="drums"){
+    if(p.drums.includes(s))drum("kick");
+    if(p.snare.includes(s))drum("snare");
+    if(p.hat.includes(s))drum("hat");
+  }
+  if(c.track==="bass"&&p.bass.includes(s))playRealSample("bass",["C2","G1","A1","F1"][Math.floor(s/4)],.35,.16);
+  if(c.track==="piano"&&p.piano.includes(s))playRealSample("piano",["C4","E4","G4","B4"][Math.floor(s/4)],.5,.16);
+  if(c.track==="melody"&&p.melody.includes(s))playRealSample("lead",["E5","G5","A5","B5","D6"][Math.floor(s/2)%5],.32,.11);
+}
 function tick(){const beat=60/project.bpm;playSec+=beat/4;step=(step+1)%16;clipAt(playSec).forEach(c=>playClip(c,playSec-c.start));renderTimeline();timecode();if(playSec>=project.lengthBars*4){stop()}}
 function start(){audio();if(playing)return;playing=true;state(recording?"Recording":"Playing");tick();timer=setInterval(tick,60000/project.bpm/4)}
 function stop(){playing=false;clearInterval(timer);timer=null;stopMidiPlayback();state(recording?"Recording stopped":"Stopped");if(recording){recording=false;document.getElementById("record").textContent="Record"}}
