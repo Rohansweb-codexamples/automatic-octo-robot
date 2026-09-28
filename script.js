@@ -23,8 +23,8 @@ function save(){history.push(JSON.stringify(project));if(history.length>30)histo
 function setState(s){const e=document.getElementById("state");if(e)e.textContent=s}
 function ensureAudio(){if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=.8;master.connect(ctx.destination)}if(ctx.state==="suspended")ctx.resume();return ctx}
 function freq(note){const m=note.match(/^([A-G])([#b]?)(-?\d)$/);if(!m)return 261.63;const names={C:0,D:2,E:4,F:5,G:7,A:9,B:11};let n=names[m[1]]+(m[2]==="#"?1:m[2]==="b"?-1:0);return 440*Math.pow(2,(n+(+m[3]-4)*12-9)/12)}
-function synth(note,d,type,vol,when=0,engine="piano",destination=master){
- ensureAudio();const now=ctx.currentTime+when,f=freq(note),gain=ctx.createGain();gain.gain.setValueAtTime(.0001,now);
+function synth(note,d,type,vol,when=0,engine="piano",destination=null){
+ ensureAudio();if(!destination)destination=master;const now=ctx.currentTime+when,f=freq(note),gain=ctx.createGain();gain.gain.setValueAtTime(.0001,now);
  const filter=ctx.createBiquadFilter();filter.type="lowpass";filter.frequency.value=engine==="bass"?900:engine==="pad"?2400:7000;
  let oscs=[];
  const add=(wave,mult,detune=0)=>{const o=ctx.createOscillator();o.type=wave;o.frequency.value=f*mult;o.detune.value=detune;o.connect(filter);o.start(now);o.stop(now+d+.05);oscs.push(o)};
@@ -44,7 +44,7 @@ function synth(note,d,type,vol,when=0,engine="piano",destination=master){
  gain.gain.exponentialRampToValueAtTime(Math.max(.002,vol),now+attack);
  gain.gain.exponentialRampToValueAtTime(.0001,now+d+release);
 }
-function noise(d=.12,vol=.18,when=0,destination=master){ensureAudio();const n=ctx.createBufferSource(),b=ctx.createBuffer(1,Math.max(1,Math.floor(ctx.sampleRate*d)),ctx.sampleRate),a=b.getChannelData(0);for(let i=0;i<a.length;i++)a[i]=Math.random()*2-1;n.buffer=b;const g=ctx.createGain();g.gain.setValueAtTime(vol,ctx.currentTime+when);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+when+d);const f=ctx.createBiquadFilter();f.type="highpass";f.frequency.value=1800;n.connect(f).connect(g).connect(destination);n.start(ctx.currentTime+when)}
+function noise(d=.12,vol=.18,when=0,destination=null){ensureAudio();if(!destination)destination=master;const n=ctx.createBufferSource(),b=ctx.createBuffer(1,Math.max(1,Math.floor(ctx.sampleRate*d)),ctx.sampleRate),a=b.getChannelData(0);for(let i=0;i<a.length;i++)a[i]=Math.random()*2-1;n.buffer=b;const g=ctx.createGain();g.gain.setValueAtTime(vol,ctx.currentTime+when);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+when+d);const f=ctx.createBiquadFilter();f.type="highpass";f.frequency.value=1800;n.connect(f).connect(g).connect(destination);n.start(ctx.currentTime+when)}
 function drum(kind,when=0,destination=master){
  ensureAudio();const t=ctx.currentTime+when;
  if(kind==="kick"){const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.setValueAtTime(145,t);o.frequency.exponentialRampToValueAtTime(45,t+.18);g.gain.setValueAtTime(.85,t);g.gain.exponentialRampToValueAtTime(.0001,t+.32);o.connect(g).connect(destination);o.start(t);o.stop(t+.34)}
