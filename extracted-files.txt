@@ -1,0 +1,139 @@
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 001 - 136 BPM - Eb minor/MIDI Files/Choir.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 001 - 136 BPM - Eb minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 001 - 136 BPM - Eb minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 001 - 136 BPM - Eb minor/MIDI Files/Piano.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 001 - 136 BPM - Eb minor/MIDI Files/Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 001 - 136 BPM - Eb minor/MIDI Files/Synth.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 002 - 136 BPM - Eb Major/MIDI Files/Choir.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 002 - 136 BPM - Eb Major/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 002 - 136 BPM - Eb Major/MIDI Files/Dream Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 002 - 136 BPM - Eb Major/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 002 - 136 BPM - Eb Major/MIDI Files/Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 002 - 136 BPM - Eb Major/MIDI Files/Synth.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 003 - 136 BPM - E minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 003 - 136 BPM - E minor/MIDI Files/Dream Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 003 - 136 BPM - E minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 003 - 136 BPM - E minor/MIDI Files/Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 003 - 136 BPM - E minor/MIDI Files/Synth.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 004 - 136 BPM - D minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 004 - 136 BPM - D minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 004 - 136 BPM - D minor/MIDI Files/Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 004 - 136 BPM - D minor/MIDI Files/Synth.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 005 - 136 BPM - A minor/MIDI Files/Activa Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 005 - 136 BPM - A minor/MIDI Files/Arp.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 005 - 136 BPM - A minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 005 - 136 BPM - A minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 006 - 136 BPM - G minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 006 - 136 BPM - G minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 006 - 136 BPM - G minor/MIDI Files/Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 007 - 136 BPM - F minor/MIDI Files/Activa Pluck.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 007 - 136 BPM - F minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 007 - 136 BPM - F minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 008 - 136 BPM - C minor/MIDI Files/Deep Bass.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 008 - 136 BPM - C minor/MIDI Files/Pad.mid
+sounds/Producer Space/Packs/Euphoric Trance Vocals/Construction Kits/ETV Construction Kit - 008 - 136 BPM - C minor/MIDI Files/Pluck.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 001 - 124 BPM - A minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 002 - 124 BPM - Bb minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 003 - 124 BPM - Bb minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 004 - 124 BPM - C Major.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 005 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 006 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 007 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 008 - 124 BPM - A minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 009 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 010 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 011 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 012 - 124 BPM - F minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 013 - 124 BPM - C minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 014 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Bass/HPR Bass Riff - 015 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 001 - 124 BPM - A minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 002 - 124 BPM - Bb minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 003 - 124 BPM - Bb minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 004 - 124 BPM - C Major.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 005 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 006 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 007 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 008 - 124 BPM - A minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 009 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 010 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 011 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 012 - 124 BPM - F minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 013 - 124 BPM - C minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 014 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Piano/HPR Piano Riff - 015 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 001 - 124 BPM - A minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 002 - 124 BPM - Bb minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 003 - 124 BPM - Bb minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 004 - 124 BPM - C Major.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 005 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 006 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 007 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 008 - 124 BPM - A minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 009 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 010 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 011 - 124 BPM - E minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 012 - 124 BPM - F minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 013 - 124 BPM - C minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 014 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/House Piano Riffs/MIDI Files/MIDI Files - Strings/HPR Strings - 015 - 124 BPM - D minor.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 001 - 120 BPM - C Major/PP - 001 - 120 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 001 - 120 BPM - C Major/PP - 001 - 120 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 001 - 120 BPM - C Major/PP - 001 - 120 BPM - Synth.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 002 - 120 BPM - C Major/PP - 002 - 120 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 002 - 120 BPM - C Major/PP - 002 - 120 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 002 - 120 BPM - C Major/PP - 002 - 120 BPM - Pluck.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 003 - 140 BPM - C Major/PP - 003 - 140 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 003 - 140 BPM - C Major/PP - 003 - 140 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 003 - 140 BPM - C Major/PP - 003 - 140 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 004 - 140 BPM - C minor/PP - 004 - 140 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 004 - 140 BPM - C minor/PP - 004 - 140 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 004 - 140 BPM - C minor/PP - 004 - 140 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 005 - 140 BPM - C minor/PP - 005 - 140 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 005 - 140 BPM - C minor/PP - 005 - 140 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 005 - 140 BPM - C minor/PP - 005 - 140 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 006 - 80 BPM - C Major/PP - 006 - 80 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 006 - 80 BPM - C Major/PP - 006 - 80 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 006 - 80 BPM - C Major/PP - 006 - 80 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 007 - 80 BPM - C Major/PP - 007 - 80 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 007 - 80 BPM - C Major/PP - 007 - 80 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 007 - 80 BPM - C Major/PP - 007 - 80 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 008 - 80 BPM - C Major/PP - 008 - 80 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 008 - 80 BPM - C Major/PP - 008 - 80 BPM - Pad.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 008 - 80 BPM - C Major/PP - 008 - 80 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 008 - 80 BPM - C Major/PP - 008 - 80 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 009 - 80 BPM - C Major/PP - 009 - 80 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 009 - 80 BPM - C Major/PP - 009 - 80 BPM - Pad.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 009 - 80 BPM - C Major/PP - 009 - 80 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 009 - 80 BPM - C Major/PP - 009 - 80 BPM - Strings.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 010 - 100 BPM - C Major/PP - 010 - 100 BPM - Bass.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 010 - 100 BPM - C Major/PP - 010 - 100 BPM - Piano.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/Demo Construction Kits/PP - 010 - 100 BPM - C Major/PP - 010 - 100 BPM - Pluck.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 011 - 100 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 012 - 100 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 013 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 014 - 110 BPM - C minor.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 015 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 016 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 017 - 90 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 018 - 90 BPM - C minor.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 019 - 100 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 020 - 100 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 021 - 96 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 022 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 023 - 100 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 024 - 90 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 025 - 90 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 026 - 90 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 027 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 028 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 029 - 110 BPM - C Major.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 030 - 100 BPM - C minor.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 031 - 110 BPM - C minor.mid
+sounds/Producer Space/Packs/Pop Progressions/MIDI Files/PP - 032 - 120 BPM - C minor.mid
+sounds/Producer Space/Packs/Soulful House Vocals/MIDI Chords/Ab minor.mid
+sounds/Producer Space/Packs/Soulful House Vocals/MIDI Chords/C Minor.mid
+sounds/Producer Space/Packs/Soulful House Vocals/MIDI Chords/E Major.mid
+sounds/Producer Space/Packs/Soulful House Vocals/MIDI Chords/E Minor.mid
+sounds/Producer Space/Packs/Soulful House Vocals/MIDI Chords/F Minor.mid
+sounds/Producer Space/Packs/Soulful House Vocals/MIDI Chords/F# Minor.mid
