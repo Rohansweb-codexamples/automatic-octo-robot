@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rohans Music Studio</title><link rel="stylesheet" href="style.css">
+<title>Sound Studio</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio <span class="version-badge">V6.0</span></b><small>Song Creator • MIDI Library</small></div></div>
-  <button id="newProject">New</button><button id="save">Save</button><button id="undo">Undo</button><button id="redo">Redo</button>
+  <div class="brand"><span class="logo">♪</span><div><b>Sound Studio <span class="version-badge">BETA</span></b><small>Build music with beats, notes &amp; sounds</small></div></div>
+  <button id="newProject">New song</button><button id="save">Save</button><button id="undo">Undo</button><button id="redo">Redo</button>
   <div class="transport"><button id="rewind">|&lt;</button><button id="play" class="play">Play</button><button id="stop">Stop</button><button id="record" class="record">Record</button></div>
   <label class="tempo">BPM <input id="bpm" type="number" min="50" max="200" value="120"></label>
-  <span id="timecode">00:00</span><button id="fullscreen">Fullscreen</button>
+  <span id="timecode">00:00</span><button id="fullscreen">Full screen</button>
 </header>
 <div class="workspace">
   <aside class="left">
@@ -37,12 +37,13 @@
   </main>
   <aside class="right">
     <div class="panel"><b>PROJECT</b><input id="projectName" value="My Music"><button id="duplicateProject">Duplicate</button><button id="deleteProject">Reset</button></div>
+    <div class="panel"><b>QUICK START</b><p>Pick a sound, then click an empty space in the arrangement to add a four-bar clip.</p></div>
     <div class="panel"><b>LOOPS & CLIPS</b><div id="loopLibrary"></div></div>
     <div class="panel"><b>MASTER</b><label>Volume <input id="masterVol" type="range" min="0" max="100" value="80"></label></div>
     <div class="panel"><b>STATUS</b><p id="statusText">Ready to create.</p></div>
   </aside>
 </div>
-<footer><canvas id="visualizer"></canvas><span>Rohans Web Music Creator</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script><script src="midi-engine.js?v=6.0"></script>
-<script type="module" src="script.js?v=6.0"></script>
+<footer><canvas id="visualizer"></canvas><span>Sound Studio • create, play, and share your sound</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script><script src="midi-engine.js?v=7.0"></script>
+<script type="module" src="script.js?v=7.0"></script>
 </body></html>
