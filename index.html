@@ -1,48 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rohans Music Studio</title><link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Maker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio <span class="version-badge">V6.0</span></b><small>Song Creator • MIDI Library</small></div></div>
-  <button id="newProject">New</button><button id="save">Save</button><button id="undo">Undo</button><button id="redo">Redo</button>
-  <div class="transport"><button id="rewind">|&lt;</button><button id="play" class="play">Play</button><button id="stop">Stop</button><button id="record" class="record">Record</button></div>
-  <label class="tempo">BPM <input id="bpm" type="number" min="50" max="200" value="120"></label>
-  <span id="timecode">00:00</span><button id="fullscreen">Fullscreen</button>
-</header>
-<div class="workspace">
-  <aside class="left">
-    <button class="newtrack" id="addTrack">+ Add Track</button>
-    <div class="section-title">TRACKS</div><div id="tracks"></div>
-    <div class="section-title">INSTRUMENTS</div><div id="instrumentCards"></div>
-    <div class="section-title">SOUND PACKS</div><div id="soundPacks"></div>
-  </aside>
-  <main class="main">
-    <section class="arrangement">
-      <div class="arr-head"><div><span>ARRANGEMENT</span><h1 id="projectTitle">My Music</h1></div>
-        <div class="arr-tools"><button id="zoomOut">−</button><button id="zoomIn">+</button><button id="clearSong">Clear Song</button></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Music Maker home"><span class="brand-mark">M</span><span>music maker</span></a>
+    <nav aria-label="Main navigation"><a href="#studio">Create</a><a href="#how-it-works">How it works</a></nav>
+    <button class="help-button" id="helpButton" type="button">?</button>
+  </header>
+
+  <main id="studio">
+    <section class="hero">
+      <div><p class="eyebrow">MAKE A SONG</p><h1>Make music, one beat at a time.</h1><p class="intro">Choose a sound, fill in the beat boxes, then press play. There are no wrong notes.</p></div>
+      <div class="hero-notes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="maker" aria-label="Music sequencer">
+      <div class="transport">
+        <div class="transport-main"><button class="play-button" id="playButton" type="button"><span>▶</span> Play</button><button class="secondary-button" id="clearButton" type="button">Clear song</button><button class="download-button" id="downloadButton" type="button">↓ Download WAV</button></div>
+        <label class="tempo-control">Tempo <input id="tempo" type="range" min="70" max="160" value="112"><output id="tempoValue">112</output></label>
+        <div class="beat-readout"><span id="beatNumber">Ready</span><small>beat</small></div>
       </div>
-      <div class="timeline-shell"><div class="track-labels" id="trackLabels"></div><div class="timeline" id="timeline"></div></div>
-      <div class="timeline-help">Click an empty bar to place the selected instrument. Record keyboard or pads while the playhead moves to build a song across the timeline.</div>
+
+      <div class="sound-picker" aria-label="Choose an instrument">
+        <span class="picker-label">1. Pick a sound</span>
+        <div id="soundChoices" class="sound-choices"></div>
+      </div>
+
+      <div class="sequencer-wrap">
+        <div class="sequencer-heading"><div><span class="picker-label">2. Build your beat</span><p>Click boxes to turn sounds on and off.</p></div><div class="bar-count"><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+        <div id="sequencer" class="sequencer" aria-label="Beat grid"></div>
+      </div>
+
+      <div class="lower-tools">
+        <section class="mini-panel"><h2>Try a starter beat</h2><p>Start with a groove and make it your own.</p><div class="starter-buttons"><button data-pattern="pop" type="button">Pop beat</button><button data-pattern="dance" type="button">Dance beat</button><button data-pattern="chill" type="button">Chill beat</button></div></section>
+        <section class="mini-panel keyboard-panel"><h2>3. Play a melody</h2><p>Tap the colorful keys or use A–K on your keyboard.</p><div class="keys" id="keys"></div></section>
+      </div>
     </section>
-    <section class="editor">
-      <div class="editor-head"><div><b id="selectedTrackTitle">Piano</b><span id="state">Ready</span></div><select id="instrumentSelect"></select></div>
-      <div class="piano-roll" id="pianoRoll"></div>
-      <div class="keyboard" id="keys"></div>
-      <div class="pads" id="pads"></div>
-    </section>
-    <section class="bottom"><label class="upload">Import audio<input id="audio" type="file" accept="audio/*"></label><button id="playImported">Play Imported</button><button id="random">Generate Arrangement</button><button id="exportWav">Download WAV</button><button id="exportMp3">Download MP3</button><span id="audioName">No audio selected</span></section>
+
+    <section id="how-it-works" class="how"><div><span>1</span><h2>Choose</h2><p>Pick from warm melodies, bass, drums, and more.</p></div><div><span>2</span><h2>Experiment</h2><p>Make patterns by turning beat boxes on and off.</p></div><div><span>3</span><h2>Play</h2><p>Hear your creation and keep changing it.</p></div></section>
+
+    <section class="ideas" aria-labelledby="ideas-title"><div class="ideas-intro"><p class="eyebrow">NEXT STEPS</p><h2 id="ideas-title">Make this song yours.</h2><p>Try these friendly music-making ideas whenever you are ready for something new.</p></div><div class="idea-cards"><article><span class="idea-icon orange">♫</span><h3>Change the feeling</h3><p>Slow the tempo for a calm song or turn it up to make a dance track.</p></article><article><span class="idea-icon green">+</span><h3>Layer your sounds</h3><p>Start with drums, add bass, and then make a tiny melody on top.</p></article><article><span class="idea-icon purple">↓</span><h3>Keep a copy</h3><p>Download your beat as a WAV file to listen to or share later.</p></article></div></section>
+
+    <section class="challenge" aria-labelledby="challenge-title"><div><p class="eyebrow">MUSIC CHALLENGE</p><h2 id="challenge-title">Can you make a beat that sounds like rain?</h2><p>Try a slow tempo, scattered hi-hats, and just a few bright chime notes. There is no one right answer.</p></div><button id="challengeButton" type="button">Try the rain challenge <span>→</span></button></section>
   </main>
-  <aside class="right">
-    <div class="panel"><b>PROJECT</b><input id="projectName" value="My Music"><button id="duplicateProject">Duplicate</button><button id="deleteProject">Reset</button></div>
-    <div class="panel"><b>LOOPS & CLIPS</b><div id="loopLibrary"></div></div>
-    <div class="panel"><b>MASTER</b><label>Volume <input id="masterVol" type="range" min="0" max="100" value="80"></label></div>
-    <div class="panel"><b>STATUS</b><p id="statusText">Ready to create.</p></div>
-  </aside>
-</div>
-<footer><canvas id="visualizer"></canvas><span>Rohans Web Music Creator</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script><script src="midi-engine.js?v=6.0"></script>
-<script type="module" src="script.js?v=6.0"></script>
-</body></html>
+  <footer><span class="brand-mark">M</span><span>Music Maker</span><span>Make something wonderful today.</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
