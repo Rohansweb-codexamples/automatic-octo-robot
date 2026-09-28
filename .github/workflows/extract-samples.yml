@@ -1,0 +1,39 @@
+name: Extract sound library
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'producer-space-cc0-sample-library.zip'
+      - '.github/workflows/extract-samples.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract ZIP
+        run: |
+          rm -rf sounds
+          mkdir -p sounds
+          unzip -q producer-space-cc0-sample-library.zip -d sounds
+          find sounds -type f | sort > extracted-files.txt
+          echo "Extracted files:"
+          find sounds -type f | sort | head -200
+
+      - name: Commit extracted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sounds extracted-files.txt
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit"
+          else
+            git commit -m "Extract sample library"
+            git push
+          fi
