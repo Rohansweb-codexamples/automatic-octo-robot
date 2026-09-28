@@ -6,7 +6,7 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio</b><small>Song Creator</small></div></div>
+  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio <span class="version-badge">V6.0</span></b><small>Song Creator • MIDI Library</small></div></div>
   <button id="newProject">New</button><button id="save">Save</button><button id="undo">Undo</button><button id="redo">Redo</button>
   <div class="transport"><button id="rewind">|&lt;</button><button id="play" class="play">Play</button><button id="stop">Stop</button><button id="record" class="record">Record</button></div>
   <label class="tempo">BPM <input id="bpm" type="number" min="50" max="200" value="120"></label>
@@ -43,6 +43,6 @@
   </aside>
 </div>
 <footer><canvas id="visualizer"></canvas><span>Rohans Web Music Creator</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script>
-<script type="module" src="script.js?v=5"></script>
+<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script><script src="midi-engine.js?v=6.0"></script>
+<script type="module" src="script.js?v=6.0"></script>
 </body></html>
