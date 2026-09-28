@@ -8,30 +8,49 @@ on:
       - '.github/workflows/build-mp3-library.yml'
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install MIDI renderer
-        run: sudo apt-get update && sudo apt-get install -y fluidsynth fluid-soundfont-gm ffmpeg
-      - name: Extract and convert MIDI to MP3
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fluidsynth fluid-soundfont-gm ffmpeg unzip
+      - name: Extract and convert every MIDI file
         shell: bash
         run: |
-          rm -rf midi-mp3
-          mkdir -p midi-mp3
+          set -e
+          rm -rf midi-mp3 /tmp/samplelib
+          mkdir -p midi-mp3 /tmp/samplelib
           unzip -q producer-space-cc0-sample-library.zip -d /tmp/samplelib
-          find /tmp/samplelib -type f \( -iname '*.mid' -o -iname '*.midi' \) -print0 | while IFS= read -r -d '' f; do
-            base=$(basename "$f")
-            name="${base%.*}"
-            safe=$(echo "$name" | sed 's/[^A-Za-z0-9._-]/_/g')
-            fluidsynth -ni -F "/tmp/${safe}.wav" -r 44100 /usr/share/sounds/sf2/FluidR3_GM.sf2 "$f" >/dev/null 2>&1 || true
-            if [ -f "/tmp/${safe}.wav" ]; then ffmpeg -y -i "/tmp/${safe}.wav" -codec:a libmp3lame -q:a 2 "midi-mp3/${safe}.mp3" >/dev/null 2>&1; fi
-          done
-          find midi-mp3 -type f -name '*.mp3' | sort > midi-mp3/index.txt
-      - name: Commit one-folder library
+          count=0
+          while IFS= read -r -d '' f; do
+            rel="${f#/tmp/samplelib/}"
+            base="$(basename "$f")"
+            stem="${base%.*}"
+            hash="$(printf '%s' "$rel" | sha256sum | cut -c1-10)"
+            safe="$(printf '%s' "$stem" | sed 's/[^A-Za-z0-9._-]/_/g')"
+            out="midi-mp3/${safe}-${hash}.mp3"
+            wav="/tmp/${safe}-${hash}.wav"
+            if fluidsynth -ni -F "$wav" -r 44100 /usr/share/sounds/sf2/FluidR3_GM.sf2 "$f" >/dev/null 2>&1; then
+              if ffmpeg -y -loglevel error -i "$wav" -codec:a libmp3lame -q:a 2 "$out"; then count=$((count+1)); fi
+            fi
+            rm -f "$wav"
+          done < <(find /tmp/samplelib -type f \( -iname '*.mid' -o -iname '*.midi' \) -print0)
+          find midi-mp3 -type f -name '*.mp3' -printf '%f\n' | sort > midi-mp3/index.txt
+          echo "Converted $count MIDI files"
+          test "$count" -gt 0
+      - name: Commit one-folder MP3 library
+        shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add midi-mp3
-          if git diff --cached --quiet; then echo 'No MP3 changes'; else git commit -m 'V7.0: convert MIDI library to MP3'; git push; fi
+          if git diff --cached --quiet; then
+            echo 'No MP3 changes'
+          else
+            git commit -m 'V7.1: build complete MP3 library'
+            git push
+          fi
