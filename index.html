@@ -3,81 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rohans Music Studio V2</title>
+<title>Rohans Music Studio V3</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio <span class="version">V2</span></b><small>MULTI TRACK • LOOPS • PROJECTS • EXPORT</small></div></div>
-  <div class="top">
-    <button id="newProject">New</button><button id="openProject">Open</button><button id="duplicateProject">Duplicate</button>
-    <button id="play">Play</button><button id="stop">Stop</button><button id="save">Save</button>
-    <button id="exportWav">WAV</button><button id="exportMp3">MP3</button>
-  </div>
-</header>
-<main>
-<section class="panel transport">
-  <div class="transport-row">
-    <strong id="state">Ready</strong><label>BPM <input id="bpm" type="range" min="60" max="180" value="120"><b id="bpmVal">120</b></label>
-    <label>Master <input id="masterVol" type="range" min="0" max="100" value="80"></label>
+<header class="topbar">
+  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio</b><small>CREATE • RECORD • MIX • EXPORT</small></div></div>
+  <div class="top-actions">
+    <button id="newProject">New</button><button id="save">Save</button><button id="undo">Undo</button><button id="redo">Redo</button>
+    <button class="primary" id="play">Play</button><button id="stop">Stop</button><button id="record">Record</button>
     <button id="fullscreen">Fullscreen</button>
   </div>
-  <div class="project-line"><span>Project:</span><strong id="projectName">My V2 Project</strong><span id="projectStatus">Auto-save ready</span></div>
-  <canvas id="visualizer"></canvas>
-</section>
+</header>
 
-<section class="manager panel">
-  <div class="section-title"><div><small>PROJECT MANAGER</small><h2>Projects</h2></div><button id="deleteProject">Delete Current</button></div>
-  <div id="projectList" class="project-list"></div>
-</section>
+<div class="studio">
+  <aside class="sidebar">
+    <div class="side-title">STUDIO</div>
+    <button class="nav active" data-section="tracks">Tracks</button>
+    <button class="nav" data-section="sounds">Sounds</button>
+    <button class="nav" data-section="loops">Loops</button>
+    <button class="nav" data-section="instruments">Instruments</button>
+    <button class="nav" data-section="mixer">Mixer</button>
+    <div class="side-title">PROJECT</div>
+    <button id="openProject" class="nav">Projects</button>
+    <button id="duplicateProject" class="nav">Duplicate</button>
+    <div class="project-mini"><span>Current project</span><b id="projectName">My Music</b></div>
+  </aside>
 
-<section class="panel">
-  <div class="section-title"><div><small>ARRANGER</small><h2>Multi-track Sequencer</h2></div><button id="random">Randomize</button></div>
-  <div class="track-tools">
-    <select id="trackSelect"></select><select id="instrumentSelect"></select><button id="addTrack">Add Track</button>
-    <button id="clearTrack">Clear Track</button>
-  </div>
-  <div id="grid"></div>
-</section>
+  <main class="workspace">
+    <section class="control-strip">
+      <div class="transport"><button id="prevStep">|&lt;</button><button class="bigplay" id="play2">Play</button><button id="stop2">Stop</button><button id="nextStep">&gt;|</button></div>
+      <label>BPM <input id="bpm" type="number" min="50" max="200" value="120"></label>
+      <label>Master <input id="masterVol" type="range" min="0" max="100" value="80"></label>
+      <label>Bars <select id="bars"><option>1</option><option selected>2</option><option>4</option><option>8</option></select></label>
+      <span id="state" class="status">Ready</span>
+    </section>
 
-<section class="two-col">
-  <section class="panel">
-    <div class="section-title"><div><small>LOOP LIBRARY</small><h2>Built-in Loops</h2></div></div>
-    <div id="loopLibrary" class="loop-grid"></div>
-  </section>
-  <section class="panel">
-    <div class="section-title"><div><small>INSTRUMENTS</small><h2>Sound Rack</h2></div></div>
-    <div id="instrumentCards" class="instrument-grid"></div>
-  </section>
-</section>
+    <section class="timeline-card">
+      <div class="timeline-head"><div><span class="eyebrow">ARRANGEMENT</span><h1>Timeline</h1></div><div class="timeline-actions"><button id="addTrack">+ Track</button><button id="random">Generate</button></div></div>
+      <div class="timeline" id="timeline"></div>
+    </section>
 
-<section class="panel piano">
-  <div class="section-title"><div><small>PIANO ROLL</small><h2>Melody Editor</h2></div><button id="clearRoll">Clear Roll</button></div>
-  <div id="pianoRoll" class="piano-roll"></div>
-  <div id="keys" class="keys"></div>
-</section>
+    <section class="editor-card" id="tracks">
+      <div class="editor-head"><div><span class="eyebrow">STEP EDITOR</span><h2 id="selectedTrackTitle">Drums</h2></div><div class="track-controls"><select id="trackSelect"></select><select id="instrumentSelect"></select><button id="clearTrack">Clear</button></div></div>
+      <div class="step-editor" id="grid"></div>
+    </section>
 
-<section class="panel">
-  <div class="section-title"><div><small>MIXER & EFFECTS</small><h2>Track Controls</h2></div></div>
-  <div id="mixer" class="mixer-grid"></div>
-</section>
+    <section class="editor-card piano-editor">
+      <div class="editor-head"><div><span class="eyebrow">MELODY</span><h2>Piano Roll</h2></div><button id="clearRoll">Clear Notes</button></div>
+      <div class="roll-wrap"><div id="pianoRoll" class="piano-roll"></div></div>
+      <div id="keys" class="keys"></div>
+    </section>
 
-<section class="panel pads">
-  <div class="section-title"><div><small>PERFORMANCE</small><h2>Performance Pads</h2></div></div>
-  <div id="pads" class="pad-grid"></div>
-</section>
+    <section class="editor-card">
+      <div class="editor-head"><div><span class="eyebrow">PERFORMANCE</span><h2>Beat Pads</h2></div></div>
+      <div id="pads" class="pad-grid"></div>
+    </section>
 
-<section class="panel">
-  <div class="section-title"><div><small>AUDIO</small><h2>Import & Record</h2></div></div>
-  <div class="audio-tools">
-    <label class="upload">Import Audio<input id="audio" type="file" accept="audio/*"></label>
-    <button id="playImported">Play Imported</button>
-    <span id="audioName">No imported audio</span>
-  </div>
-</section>
-</main>
-<footer>Rohans Web Music Studio V2 • Projects are saved locally in your browser</footer>
+    <section class="editor-card import-card">
+      <div><div><span class="eyebrow">AUDIO</span><h2>Import audio</h2></div><p>Bring MP3, WAV or other browser-supported audio into your project.</p></div>
+      <label class="upload">Choose Audio<input id="audio" type="file" accept="audio/*"></label><button id="playImported">Play</button><span id="audioName">No file selected</span>
+    </section>
+  </main>
+
+  <aside class="rightbar">
+    <section class="drawer active" id="sounds"><div class="drawer-head"><span>SOUNDS</span><b>Sound Packs</b></div><div id="soundPacks" class="pack-grid"></div></section>
+    <section class="drawer" id="loops"><div class="drawer-head"><span>LOOPS</span><b>Loop Library</b></div><div id="loopLibrary" class="library"></div></section>
+    <section class="drawer" id="instruments"><div class="drawer-head"><span>INSTRUMENTS</span><b>Instrument Rack</b></div><div id="instrumentCards" class="library"></div></section>
+    <section class="drawer" id="mixer"><div class="drawer-head"><span>MIXER</span><b>Track Levels</b></div><div id="mixerList" class="mixer-list"></div></section>
+    <section class="drawer" id="projects"><div class="drawer-head"><span>PROJECTS</span><b>Your Projects</b></div><div id="projectList" class="library"></div><button class="danger full" id="deleteProject">Delete Current</button></section>
+    <section class="export-box"><span class="eyebrow">EXPORT</span><h3>Download your song</h3><button class="download" id="exportWav">Download WAV</button><button class="download alt" id="exportMp3">Download MP3</button></section>
+  </aside>
+</div>
+
+<footer><canvas id="visualizer"></canvas><span>Rohans Web Music Studio V3</span></footer>
 <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script>
-<script type="module" src="script.js"></script>
+<script type="module" src="script.js?v=3"></script>
 </body>
 </html>
