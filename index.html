@@ -1,48 +1,20 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rohans Music Studio</title><link rel="stylesheet" href="style.css">
-</head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Music Maker</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="topbar">
-  <div class="brand"><span class="logo">R</span><div><b>Rohans Music Studio <span class="version-badge">V6.0</span></b><small>Song Creator • MIDI Library</small></div></div>
-  <button id="newProject">New</button><button id="save">Save</button><button id="undo">Undo</button><button id="redo">Redo</button>
-  <div class="transport"><button id="rewind">|&lt;</button><button id="play" class="play">Play</button><button id="stop">Stop</button><button id="record" class="record">Record</button></div>
-  <label class="tempo">BPM <input id="bpm" type="number" min="50" max="200" value="120"></label>
-  <span id="timecode">00:00</span><button id="fullscreen">Fullscreen</button>
-</header>
-<div class="workspace">
-  <aside class="left">
-    <button class="newtrack" id="addTrack">+ Add Track</button>
-    <div class="section-title">TRACKS</div><div id="tracks"></div>
-    <div class="section-title">INSTRUMENTS</div><div id="instrumentCards"></div>
-    <div class="section-title">SOUND PACKS</div><div id="soundPacks"></div>
-  </aside>
-  <main class="main">
-    <section class="arrangement">
-      <div class="arr-head"><div><span>ARRANGEMENT</span><h1 id="projectTitle">My Music</h1></div>
-        <div class="arr-tools"><button id="zoomOut">−</button><button id="zoomIn">+</button><button id="clearSong">Clear Song</button></div>
-      </div>
-      <div class="timeline-shell"><div class="track-labels" id="trackLabels"></div><div class="timeline" id="timeline"></div></div>
-      <div class="timeline-help">Click an empty bar to place the selected instrument. Record keyboard or pads while the playhead moves to build a song across the timeline.</div>
+<header class="site-header"><a class="brand" href="#home"><span class="brand-mark">M</span><span>music maker</span></a><nav><a href="#home" data-page-link="home">Home</a><a href="#studio" data-page-link="studio">Studio</a><a href="#learn">How it works</a></nav><button class="help-button" id="helpButton" type="button">?</button></header>
+<main>
+  <section class="page landing-page" id="home"><div class="landing-copy"><p class="eyebrow">A FRIENDLY MUSIC STUDIO</p><h1>Make a whole song.<br><em>Make it yours.</em></h1><p>Build a beat, record a melody, add instruments, and download your complete song—all in your browser.</p><div class="landing-actions"><button class="primary-action" data-open-studio type="button">Start making music <span>→</span></button><a href="#learn">See how it works</a></div><div class="landing-points"><span>● No account</span><span>● Up to 6 minutes</span><span>● Free to use</span></div></div><div class="landing-art" aria-hidden="true"><div class="art-card card-one">♪</div><div class="art-card card-two">♫</div><div class="art-card card-three">♩</div><div class="art-wave"></div></div></section>
+
+  <section class="page studio-page" id="studio" hidden>
+    <div class="studio-title"><div><p class="eyebrow">YOUR PROJECT</p><h1>My first song</h1><p id="songLength">16 bars · 0:34</p></div><button class="exit-studio" data-open-home type="button">← Back home</button></div>
+    <section class="maker" aria-label="Music studio">
+      <div class="transport"><div class="transport-main"><button class="play-button" id="playButton" type="button">▶ Play</button><button class="record-button" id="recordButton" type="button">● Record keys</button><button class="secondary-button" id="clearButton" type="button">Clear</button><button class="download-button" id="downloadButton" type="button">↓ Download full song</button></div><div class="beat-readout"><span id="beatNumber">Ready</span><small>beat</small></div></div>
+      <div class="song-settings"><label>Tempo <input id="tempo" type="range" min="60" max="180" value="112"><output id="tempoValue">112 BPM</output></label><label>Bars <input id="bars" type="number" min="1" max="168" value="16"><small id="barLimit">Up to 168 bars at this tempo (6 min max)</small></label><label>Selected instrument <select id="instrumentSelect"></select></label><button id="addInstrument" type="button">+ Add instrument</button></div>
+      <div class="sound-picker"><span class="picker-label">INSTRUMENTS</span><div id="soundChoices" class="sound-choices"></div></div>
+      <div class="sequencer-wrap"><div class="sequencer-heading"><div><span class="picker-label">ARRANGEMENT</span><p>Each column is one bar. Click a box to add that instrument to the bar.</p></div><div class="bar-ruler" id="barRuler"></div></div><div id="sequencer" class="sequencer" aria-label="Song arrangement"></div></div>
+      <div class="lower-tools"><section class="mini-panel"><h2>Starter songs</h2><p>Load a style, then change anything you want.</p><div class="starter-buttons"><button data-pattern="pop" type="button">Pop</button><button data-pattern="dance" type="button">Dance</button><button data-pattern="chill" type="button">Chill</button></div></section><section class="mini-panel keyboard-panel"><h2>Record a melody</h2><p>Select an instrument, press Record, then use A–K or tap keys. Notes are placed into the song while it plays.</p><div class="keys" id="keys"></div></section></div>
     </section>
-    <section class="editor">
-      <div class="editor-head"><div><b id="selectedTrackTitle">Piano</b><span id="state">Ready</span></div><select id="instrumentSelect"></select></div>
-      <div class="piano-roll" id="pianoRoll"></div>
-      <div class="keyboard" id="keys"></div>
-      <div class="pads" id="pads"></div>
-    </section>
-    <section class="bottom"><label class="upload">Import audio<input id="audio" type="file" accept="audio/*"></label><button id="playImported">Play Imported</button><button id="random">Generate Arrangement</button><button id="exportWav">Download WAV</button><button id="exportMp3">Download MP3</button><span id="audioName">No audio selected</span></section>
-  </main>
-  <aside class="right">
-    <div class="panel"><b>PROJECT</b><input id="projectName" value="My Music"><button id="duplicateProject">Duplicate</button><button id="deleteProject">Reset</button></div>
-    <div class="panel"><b>LOOPS & CLIPS</b><div id="loopLibrary"></div></div>
-    <div class="panel"><b>MASTER</b><label>Volume <input id="masterVol" type="range" min="0" max="100" value="80"></label></div>
-    <div class="panel"><b>STATUS</b><p id="statusText">Ready to create.</p></div>
-  </aside>
-</div>
-<footer><canvas id="visualizer"></canvas><span>Rohans Web Music Creator</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.all.min.js"></script><script src="midi-engine.js?v=6.0"></script>
-<script type="module" src="script.js?v=6.0"></script>
-</body></html>
+  </section>
+
+  <section class="learn" id="learn"><p class="eyebrow">HOW IT WORKS</p><h2>Small steps make big songs.</h2><div class="learn-cards"><article><span>1</span><h3>Choose instruments</h3><p>Add drums, bass, chimes, marimba, synth pads, and more to your arrangement.</p></article><article><span>2</span><h3>Build the song</h3><p>Set your number of bars and turn each instrument on where it should play.</p></article><article><span>3</span><h3>Record and download</h3><p>Record a keyboard melody, then save the complete song as a WAV file.</p></article></div></section>
+</main><footer class="site-footer"><div class="footer-brand"><span class="brand-mark">M</span><strong>Music Maker</strong></div><p>Make something wonderful today.</p><a href="#home">Back to top ↑</a></footer><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="script.js"></script></body></html>
